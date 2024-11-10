@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://cku3vxpbolfei"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rgwjv"]
+albedo_color = Color(0.4, 0.4, 0.4, 1)
+
+[node name="PrototypeRock" type="Node3D"]
+
+[node name="Rock1" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+use_collision = true
+polygon = PackedVector2Array(0, 0, -0.640908, 0.677872, -0.276875, 1.91571, -0.0937874, 2.19113, 0.831513, 1.86098, 1.89127, 1.17074, 1.75439, -0.173358, 0.632893, -0.425197)
+material = SubResource("StandardMaterial3D_rgwjv")
+
+[node name="Rock2" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.4416, 0.897212, 0, -0.897212, 0.4416, -0.571578, -0.38227, 0.198097)
+use_collision = true
+polygon = PackedVector2Array(0, 0, -0.221017, 0.573627, 0.432057, 0.842644, 0.831513, 1.86098, 1.89127, 1.17074, 1.75439, -0.173358, 1.20142, -0.0361835, 0.632893, -0.425197)
+material = SubResource("StandardMaterial3D_rgwjv")
+
+[node name="Rock3" type="CSGPolygon3D" parent="."]
+transform = Transform3D(0.482283, 0.786391, 0.385996, -0.464354, -0.144139, 0.873842, 0.742818, -0.600678, 0.295648, 0.448567, 0.242682, -0.272596)
+use_collision = true
+polygon = PackedVector2Array(0, 0, -0.221017, 0.573627, 0.432057, 0.842644, 0.831513, 1.86098, 0.975455, 0.699309, 1.20142, -0.0361835, 0.632893, -0.425197)
+material = SubResource("StandardMaterial3D_rgwjv")

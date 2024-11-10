@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3g13jtkpl87m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwslx"]
+albedo_color = Color(0, 0.172549, 0, 1)
+
+[node name="PrototypeBush" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+use_collision = true
+size = Vector3(2, 2, 2)
+material = SubResource("StandardMaterial3D_hwslx")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29068, 0.85, 0)
+use_collision = true
+size = Vector3(2.5, 2.5, 2.5)
+material = SubResource("StandardMaterial3D_hwslx")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.138022, 0.55, -1.54213)
+use_collision = true
+size = Vector3(2.5, 1.9, 2)
+material = SubResource("StandardMaterial3D_hwslx")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84963, 0.4, -1.22444)
+use_collision = true
+size = Vector3(2.2, 1.6, 1.7)
+material = SubResource("StandardMaterial3D_hwslx")
