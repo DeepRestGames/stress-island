@@ -27,7 +27,7 @@ func _physics_process(delta):
 	# Rotation
 	if direction:
 		var q_from = orientation.basis.get_rotation_quaternion()
-		var q_to = Transform3D().looking_at(-direction, Vector3.UP).basis.get_rotation_quaternion()
+		var q_to = Transform3D().looking_at(Vector3(-direction.x, 0, -direction.z), Vector3.UP).basis.get_rotation_quaternion()
 		# Interpolate current rotation with desired one.
 		orientation.basis = Basis(q_from.slerp(q_to, delta * ROTATION_INTERPOLATE_SPEED))
 		player_model.global_transform.basis = orientation.basis
