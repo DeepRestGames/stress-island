@@ -18,6 +18,8 @@ func _physics_process(delta):
 	
 	var direction = (get_viewport().get_camera_3d().transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
+		GameManager.player_state = GameManager.PlayerState.WALKING
+		
 		# Move player
 		velocity.x = direction.x * move_speed
 		velocity.z = direction.z * move_speed
@@ -30,6 +32,8 @@ func _physics_process(delta):
 		player_model.global_transform.basis = orientation.basis
 		
 	else:
+		GameManager.player_state = GameManager.PlayerState.IDLE
+		
 		velocity.x = move_toward(velocity.x, 0, move_speed)
 		velocity.z = move_toward(velocity.z, 0, move_speed)
 

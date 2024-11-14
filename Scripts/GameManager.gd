@@ -1,7 +1,6 @@
 extends Node
 
-
-enum game_state {
+enum GameState {
 	# Game start
 	SPLASH_SCREEN,
 	MAIN_MENU,
@@ -14,6 +13,14 @@ enum game_state {
 	PAUSE_MENU,
 	SCENE_CHANGE
 }
+var game_state: GameState
+
+enum PlayerState {
+	IDLE,
+	WALKING,
+	INTERACTING
+}
+var player_state: PlayerState
 
 
 	# INFO Set save slot variables like this
