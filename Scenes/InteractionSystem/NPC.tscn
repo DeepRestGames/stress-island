@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://4v14yrd4xmlu"]
+[gd_scene load_steps=4 format=3 uid="uid://lexrix3chpln"]
 
-[ext_resource type="Script" path="res://Scripts/InteractionSystem/Interactable.gd" id="1_clpdp"]
+[ext_resource type="Script" path="res://Scripts/InteractionSystem/NPC.gd" id="1_ym8ub"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5log7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x3d0s"]
 
-[node name="Interactable" type="Node3D"]
+[node name="NPC" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("1_clpdp")
+script = ExtResource("1_ym8ub")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
@@ -18,6 +18,12 @@ skeleton = NodePath("../InteractionArea")
 [node name="InteractionArea" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+shape = SubResource("BoxShape3D_x3d0s")
+
+[node name="NPCStaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCStaticBody3D"]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 shape = SubResource("BoxShape3D_x3d0s")
 

@@ -33,7 +33,7 @@ text = "E"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InteractLabel" type="Label" parent="InteractionPromptContainer"]
+[node name="InteractionLabel" type="Label" parent="InteractionPromptContainer"]
 layout_mode = 2
 text = "INTERACT"
 horizontal_alignment = 1

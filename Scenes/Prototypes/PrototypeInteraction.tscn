@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://e6sia4chpdt"]
+[gd_scene load_steps=15 format=3 uid="uid://e6sia4chpdt"]
 
 [ext_resource type="PackedScene" uid="uid://cku3vxpbolfei" path="res://Scenes/Prototypes/PrototypeRock.tscn" id="1_mmg7u"]
 [ext_resource type="PackedScene" uid="uid://b6fkg0cnivmwf" path="res://Scenes/Prototypes/PrototypeTree.tscn" id="2_2ugn0"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://rrm3a56v1blf" path="res://Scenes/Player.tscn" id="4_0ya5p"]
 [ext_resource type="Script" path="res://Scripts/Camera/CameraArea.gd" id="5_gimtt"]
 [ext_resource type="PackedScene" uid="uid://4v14yrd4xmlu" path="res://Scenes/InteractionSystem/Interactable.tscn" id="6_k8nv4"]
+[ext_resource type="PackedScene" uid="uid://lexrix3chpln" path="res://Scenes/InteractionSystem/NPC.tscn" id="7_c5dwx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3ga4"]
 albedo_color = Color(0, 0.227451, 0, 1)
@@ -215,6 +216,10 @@ shape = SubResource("BoxShape3D_xy1wc")
 transform = Transform3D(0.909236, 0.127947, -0.396131, 0, 0.951594, 0.307357, 0.416281, -0.27946, 0.865224, -4.47564, 5.33155, 19.4995)
 
 [node name="Interactable" parent="." instance=ExtResource("6_k8nv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.532834, 0)
+
+[node name="NPC" parent="." instance=ExtResource("7_c5dwx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.1, -4)
 
 [connection signal="body_entered" from="CameraManager/CameraArea" to="CameraManager/CameraArea" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraManager/CameraArea2" to="CameraManager/CameraArea2" method="_on_body_entered"]

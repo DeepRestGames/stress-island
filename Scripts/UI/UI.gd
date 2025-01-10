@@ -2,10 +2,18 @@ extends Control
 
 
 @onready var interaction_prompt = $InteractionPromptContainer
+@onready var interaction_label = $InteractionPromptContainer/InteractionLabel
 
 
-func show_interaction_prompt(can_interact: bool):
-	if can_interact:
+func _ready() -> void:
+	EventBus.connect("interaction_event", _on_interaction_event)
+
+
+func _on_interaction_event(data):
+	if data.type == "show_prompt":
+		interaction_label.text = data.interaction_message
 		interaction_prompt.show()
-	else:
+	
+	if data.type == "hide_prompt":
+		interaction_label.text = ""
 		interaction_prompt.hide()

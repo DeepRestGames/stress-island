@@ -35,10 +35,10 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.4, 1)
 mesh = SubResource("BoxMesh_qshsy")
 skeleton = NodePath("../..")
 
-[node name="PlayerInteractionArea3D" type="Area3D" parent="PlayerModel"]
+[node name="PlayerInteractionArea" type="Area3D" parent="PlayerModel"]
 script = ExtResource("2_ebhp8")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerModel/PlayerInteractionArea3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerModel/PlayerInteractionArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 shape = SubResource("BoxShape3D_ggbll")
 
@@ -47,5 +47,4 @@ shape = SubResource("CapsuleShape3D_q7i6w")
 
 [node name="UI" parent="." instance=ExtResource("3_dqapu")]
 
-[connection signal="body_entered" from="PlayerModel/PlayerInteractionArea3D" to="PlayerModel/PlayerInteractionArea3D" method="_on_body_entered"]
-[connection signal="body_exited" from="PlayerModel/PlayerInteractionArea3D" to="PlayerModel/PlayerInteractionArea3D" method="_on_body_exited"]
+[connection signal="body_entered" from="PlayerModel/PlayerInteractionArea" to="PlayerModel/PlayerInteractionArea" method="_on_body_entered"]

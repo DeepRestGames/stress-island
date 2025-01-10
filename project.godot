@@ -19,8 +19,8 @@ config/icon="res://icon.svg"
 
 GameManager="*res://Scripts/GameManager.gd"
 InventorySystem="*res://Scripts/InventorySystem/InventorySystem.gd"
+EventBus="*res://Scripts/EventBus.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-UI="*res://Scripts/UI/UI.gd"
 
 [dialogic]
 
