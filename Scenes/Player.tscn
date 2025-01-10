@@ -17,7 +17,7 @@ albedo_color = Color(1, 0, 0, 1)
 material = SubResource("StandardMaterial3D_fa5p7")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ggbll"]
-size = Vector3(1.5, 1, 1)
+size = Vector3(0.8, 2, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q7i6w"]
 
@@ -36,10 +36,11 @@ mesh = SubResource("BoxMesh_qshsy")
 skeleton = NodePath("../..")
 
 [node name="PlayerInteractionArea" type="Area3D" parent="PlayerModel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+collision_mask = 2
 script = ExtResource("2_ebhp8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerModel/PlayerInteractionArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 shape = SubResource("BoxShape3D_ggbll")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -48,3 +49,4 @@ shape = SubResource("CapsuleShape3D_q7i6w")
 [node name="UI" parent="." instance=ExtResource("3_dqapu")]
 
 [connection signal="body_entered" from="PlayerModel/PlayerInteractionArea" to="PlayerModel/PlayerInteractionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="PlayerModel/PlayerInteractionArea" to="PlayerModel/PlayerInteractionArea" method="_on_body_exited"]

@@ -13,19 +13,12 @@ script = ExtResource("1_ym8ub")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 mesh = SubResource("BoxMesh_5log7")
-skeleton = NodePath("../InteractionArea")
-
-[node name="InteractionArea" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
-shape = SubResource("BoxShape3D_x3d0s")
+skeleton = NodePath("")
 
 [node name="NPCStaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 3
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NPCStaticBody3D"]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 shape = SubResource("BoxShape3D_x3d0s")
-
-[connection signal="area_entered" from="InteractionArea" to="." method="_on_interaction_area_entered"]
-[connection signal="area_exited" from="InteractionArea" to="." method="_on_interaction_area_exited"]
