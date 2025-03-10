@@ -3,22 +3,22 @@
 [ext_resource type="Script" path="res://Scripts/InteractionSystem/NPC.gd" id="1_ym8ub"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5log7"]
+size = Vector3(1, 2, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_x3d0s"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_dt3t0"]
+size = Vector3(1, 2, 1)
 
 [node name="NPC" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_ym8ub")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
-mesh = SubResource("BoxMesh_5log7")
-skeleton = NodePath("")
-
 [node name="NPCStaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 3
 collision_mask = 0
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NPCStaticBody3D"]
+mesh = SubResource("BoxMesh_5log7")
+skeleton = NodePath("")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NPCStaticBody3D"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
-shape = SubResource("BoxShape3D_x3d0s")
+shape = SubResource("BoxShape3D_dt3t0")
